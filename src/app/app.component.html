@@ -1,0 +1,38 @@
+  <!-- <ul>
+    <li *ngFor="let topic of topics | async">
+       {{ topic.name | json }}
+    </li>
+  </ul> 
+
+  <h1>{{ (topics | async | json) }}</h1>
+  <input type="text" #newname placeholder="Name" />
+  <input type="text" #newsize placeholder="Size" />
+  <br />
+  <button (click)="save(newname.value)">Set Name</button>
+  <button (click)="update(newsize.value)">Update Size</button>
+  <button (click)="delete()">Delete</button> 
+
+
+       
+
+
+-->
+
+  <ul>
+    <li *ngFor="let topic of topics | async">
+      <input type="text" #updatetext [value]="topic.name" />
+       <button (click)="updateItem(topic.key, updatetext.value)">Update</button>
+      <button (click)="deleteItem(topic.key)">Delete</button>
+
+    </li>
+  </ul>
+  <input type="text" #newName placeholder="Name" />
+  <input type="text" #newSize placeholder="Size" />
+  <button (click)="addItem(newName.value, newSize.value)">Add</button>
+
+  <button (click)="deleteEverything()">Delete All</button>
+
+
+
+<button (click)="filterBy('24')" >size Filter</button>
+  
